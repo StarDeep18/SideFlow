@@ -1,0 +1,53 @@
+/* ============================================
+   Workspace Switcher — Top bar
+   ============================================ */
+
+.workspace-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.workspace-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  transition: all var(--duration-fast) var(--ease-out);
+  position: relative;
+}
+
+.workspace-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-secondary);
+}
+
+.workspace-btn--active {
+  background: var(--bg-active);
+  color: var(--text-primary);
+}
+
+.workspace-btn--active:hover {
+  background: var(--bg-active);
+}
+
+.workspace-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid;
+  transition: background-color var(--duration-normal) var(--ease-out);
+  flex-shrink: 0;
+}
+
+.workspace-icon {
+  font-size: var(--text-sm);
+  line-height: 1;
+}

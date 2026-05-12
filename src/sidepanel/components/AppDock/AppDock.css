@@ -1,0 +1,153 @@
+/* ============================================
+   App Dock — Vertical Navigation Strip
+   ============================================ */
+
+.app-dock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: var(--dock-width);
+  min-width: var(--dock-width);
+  height: 100%;
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border-subtle);
+  padding: var(--space-3) 0;
+  gap: var(--space-1);
+  user-select: none;
+  z-index: 10;
+}
+
+.dock-apps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  flex: 1;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 var(--space-2);
+}
+
+.dock-apps::-webkit-scrollbar {
+  width: 0;
+}
+
+/* ---- Individual App Button ---- */
+
+.dock-app {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  transition: 
+    background-color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-spring);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.dock-app:hover {
+  background: var(--bg-hover);
+  transform: scale(1.08);
+}
+
+.dock-app:active {
+  transform: scale(0.95);
+}
+
+.dock-app--active {
+  background: var(--bg-active);
+}
+
+.dock-app--active:hover {
+  background: var(--bg-active);
+}
+
+/* ---- Active Indicator (left bar) ---- */
+
+.dock-indicator {
+  position: absolute;
+  left: -6px;
+  width: 3px;
+  height: 0;
+  border-radius: var(--radius-full);
+  transition: height var(--duration-normal) var(--ease-spring);
+}
+
+.dock-indicator--active {
+  height: 20px;
+}
+
+/* ---- Icon ---- */
+
+.dock-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: filter var(--duration-fast) var(--ease-out);
+}
+
+.dock-app:hover .dock-icon {
+  filter: drop-shadow(0 0 6px var(--app-color-dim));
+}
+
+.dock-icon--settings {
+  font-size: 1.1rem;
+  opacity: 0.7;
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.dock-app:hover .dock-icon--settings {
+  opacity: 1;
+}
+
+/* ---- Tooltip ---- */
+
+.dock-tooltip {
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: var(--shadow-md);
+  z-index: 100;
+}
+
+.dock-shortcut {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  padding: 1px 5px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-default);
+  border-radius: 4px;
+  color: var(--text-secondary);
+}
+
+/* ---- Separator ---- */
+
+.dock-separator {
+  width: 24px;
+  height: 1px;
+  background: var(--border-default);
+  margin: var(--space-2) 0;
+  flex-shrink: 0;
+}
+
+/* ---- Settings ---- */
+
+.dock-app--settings {
+  margin-bottom: var(--space-2);
+}

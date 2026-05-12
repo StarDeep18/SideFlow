@@ -1,0 +1,14 @@
+{
+  "name": "sideflow",
+  "version": "1.0.0",
+  "description": "The Universal Productivity Communication Sidebar",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["chrome-extension", "sidebar", "productivity"],
+  "author": "",
+  "license": "ISC"
+}
