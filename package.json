@@ -8,7 +8,25 @@
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
-  "keywords": ["chrome-extension", "sidebar", "productivity"],
+  "keywords": [
+    "chrome-extension",
+    "sidebar",
+    "productivity"
+  ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.4.0",
+    "@types/chrome": "^0.1.42",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.12"
+  },
+  "dependencies": {
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "zustand": "^5.0.13"
+  }
 }
